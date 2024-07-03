@@ -1,6 +1,7 @@
 if vim.filetype then
   vim.filetype.add({
     pattern = {
+      [".*/anisble/.*%.ya?ml"] = "yaml.ansible",
       [".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
       [".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
       [".*/group_vars/.*/.*%.ya?ml"] = "yaml.ansible",
@@ -12,6 +13,8 @@ if vim.filetype then
 else
   vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     pattern = {
+      "*/anisble/*.yml",
+      "*/anisble/*.yaml",
       "*/host_vars/*.yml",
       "*/host_vars/*.yaml",
       "*/group_vars/*.yml",
